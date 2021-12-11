@@ -13,6 +13,7 @@ const AddNewProduct = () => {
   const match = useRouteMatch<{ id: string }>();
 
   const newProductData: Product = {
+    id: 0,
     title: "",
     image: "",
     price: 0,

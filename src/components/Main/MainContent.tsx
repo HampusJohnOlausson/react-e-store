@@ -9,38 +9,20 @@ import AdminPage from './Admin/AdminPage';
 import AddNewProduct from './Admin/AddNewProduct';
 import About from './About';
 
-function MainContent() {
+const MainContent = () => {
 
     return (
       <main>
         <Switch>
-          <Route exact path="/">
-            <Startpage />
-          </Route>
-          <Route path="/products">
-            <ProductPage />
-          </Route>
-            <Route path={"/productItem/:id"}>
-              <ProductItem />
-            </Route>
-          <Route path="/checkout">
-            <Checkout />
-          </Route>
-          <Route path="/orderview">
-            <OrderView />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/admin">
-            <AdminPage />
-          </Route>
-          <Route path="/addNewProduct">
-            <AddNewProduct />
-          </Route>
-          <Route path={"/editProduct/:id"}>
-            <AddNewProduct />
-           </Route>
+          <Route exact path="/" component={Startpage}/>
+          <Route path="/products" component={ProductPage}/>
+          <Route path={"/productItem/:id"} component={ProductItem}/>
+          <Route path="/checkout" component={Checkout}/>
+          <Route path="/orderview" component={OrderView}/>
+          <Route path="/about" component={About}/>
+          <Route path="/admin" component={AdminPage}/>
+          <Route path="/addNewProduct" component={AddNewProduct}/>
+          <Route path={"/editProduct/:id"} component={AddNewProduct}/>
         </Switch>
       </main>
     );
