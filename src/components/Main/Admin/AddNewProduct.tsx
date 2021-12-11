@@ -6,6 +6,7 @@ import '../../../style/Admin.css';
 import { Product } from '../../../data/productData';
 import { AdminContext } from '../../../contexts/AdminContext';
 import { useRouteMatch } from 'react-router';
+import GeneralInput from './GeneralInput';
 
 
 
@@ -65,54 +66,10 @@ const AddNewProduct = () => {
               :
               <h1 style={title}>Edit product</h1>
             }
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              id="title"
-              label="Title..."
-              name="title"
-              type="text"
-              autoFocus
-              value={product.title}
-              onChange={handleTitle}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              id="image"
-              label="Image...(Url)"
-              name="image"
-              type="text"
-              value={product.image}
-              autoFocus
-              onChange={handleImage}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              id="price"
-              label="Price..."
-              name="price"
-              type="number"
-              value={product.price}
-              autoFocus
-              onChange={handlePrice}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              id="info"
-              type="text"
-              label="Info..."
-              name="info"
-              value={product.info}
-              autoFocus
-              onChange={handleInfo}
-            />
+            <GeneralInput id={'title'} type={'text'} name={'title'} label={'Title...'} value={product.title} onChange={handleTitle}/>
+            <GeneralInput id={'image'} type={'text'} name={'image'} label={'Image...(Url)'} value={product.image} onChange={handleImage}/>
+            <GeneralInput id={'Price'} type={'number'} name={'price'} label={'Price...'} value={product.price} onChange={handlePrice}/>
+            <GeneralInput id={'info'} type={'text'} name={'info'} label={'Info...'} value={product.info} onChange={handleInfo}/>
             <div style={{ alignSelf: "center" }}>
               <Button onClick={handleClick} style={btnSmall}>
                 Save
